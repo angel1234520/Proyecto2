@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Contable - Panel de Control</title>
+    <link rel="stylesheet" href="estilos/propuesta4.css">
+</head>
+<body>
+
+    <div class="layout-saas">
+        
+        <aside class="sidebar-saas">
+            <div class="sidebar-header">
+                <span class="saas-logo">FintechSaaS</span>
+                <span class="saas-version">v1.4</span>
+            </div>
+            
+            <nav class="nav-pestanas">
+                <button class="boton-pestana activa" data-seccion="inicio">
+                    <span class="icono">📊</span> Inicio
+                </button>
+                <button class="boton-pestana" data-seccion="cuentas">
+                    <span class="icono">📁</span> Catálogo de Cuentas
+                </button>
+                <button class="boton-pestana" data-seccion="movimientos">
+                    <span class="icono">✏️</span> Registrar Asiento
+                </button>
+                <button class="boton-pestana" data-seccion="diario">
+                    <span class="icono">📖</span> Libro Diario
+                </button>
+                <button class="boton-pestana" data-seccion="mayor">
+                    <span class="icono">📚</span> Libro Mayor
+                </button>
+                <button class="boton-pestana" data-seccion="resultados">
+                    <span class="icono">📈</span> Resultados Financieros
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-avatar">AM</div>
+                <div class="user-info">
+                    <p class="user-name">Ángel Martínez</p>
+                    <p class="user-role">Plan Premium</p>
+                </div>
+            </div>
+        </aside>
+
+        <div class="contenido-derecho">
+            
+            <header class="topbar-saas">
+                <div class="topbar-left">
+                    <span class="empresa-activa">🏢 Empresa: <strong>La Criolla S.A.</strong></span>
+                </div>
+                <div class="topbar-right">
+                    <button class="boton-notificacion">🔔</button>
+                    <div class="status-indicator">En línea</div>
+                </div>
+            </header>
+
+            <main class="main-workspace">
+
+                <section id="inicio" class="seccion visible">
+                    <div class="tarjeta-saas">
+                        <h1>Bienvenido al Panel de Control Contable</h1>
+                        <p>Esta suite SaaS automatizada te permite gestionar la arquitectura financiera de tu organización en tiempo real. Configura tus libros contables y haz un seguimiento analítico estructurado.</p>
+                        <h2>Flujo de Trabajo Sugerido</h2>
+                        <ol>
+                            <li>Ve al <strong>Catálogo de Cuentas</strong> para estructurar tu plan de cuentas contables.</li>
+                            <li>Ingresa en <strong>Registrar Asiento</strong> para asentar transacciones con doble entrada balanceada (Debe/Haber).</li>
+                            <li>Audita tus estados financieros reflejados automáticamente en el <strong>Libro Diario</strong> y <strong>Libro Mayor</strong>.</li>
+                            <li>Inspecciona métricas analíticas avanzadas desde el módulo de <strong>Resultados Financieros</strong>.</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section id="cuentas" class="seccion oculto">
+                    <div class="tarjeta-saas">
+                        <h2>Crear cuentas</h2>
+                        <p>Ingresa cada cuenta con su tipo y naturaleza para expandir tu catálogo contable empresarial.</p>
+                        <div class="form-rejilla">
+                            <div class="grupo">
+                                <label for="cuenta-nombre">Nombre de la cuenta</label>
+                                <input id="cuenta-nombre" type="text" placeholder="Ej. Caja, Ventas, Compras">
+                            </div>
+                            <div class="grupo">
+                                <label for="cuenta-tipo">Tipo de cuenta</label>
+                                <select id="cuenta-tipo">
+                                    <option value="">Seleccione tipo</option>
+                                    <option value="Activo">Activo</option>
+                                    <option value="Pasivo">Pasivo</option>
+                                    <option value="Patrimonio">Patrimonio</option>
+                                    <option value="Ingreso">Ingreso</option>
+                                    <option value="Costo">Costo</option>
+                                    <option value="Gasto">Gasto</option>
+                                </select>
+                            </div>
+                            <div class="grupo">
+                                <label for="cuenta-naturaleza">Naturaleza</label>
+                                <select id="cuenta-naturaleza">
+                                    <option value="">Seleccione naturaleza</option>
+                                    <option value="Deudora">Deudora</option>
+                                    <option value="Acreedora">Acreedora</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grupo-botones">
+                            <button id="boton-agregar-cuenta" class="boton boton-primario">Agregar cuenta</button>
+                            <button id="boton-limpiar-cuentas" class="boton boton-secundario">Limpiar formulario</button>
+                        </div>
+                        <p id="mensaje-cuenta" class="mensaje"></p>
+                        <div class="tabla-datos">
+                            <div class="fila encabezado"><span>Cuenta</span><span>Tipo</span><span>Naturaleza</span><span>Acción</span></div>
+                            <div id="lista-cuentas"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="movimientos" class="seccion oculto">
+                    <div class="tarjeta-saas">
+                        <h2>Registrar movimientos</h2>
+                        <p>Arma un asiento contable agregando múltiples líneas. El sistema requerirá balance estricto para registrar.</p>
+                        <div class="form-rejilla">
+                            <div class="grupo">
+                                <label for="entrada-fecha">Fecha</label>
+                                <input id="entrada-fecha" type="date">
+                            </div>
+                            <div class="grupo grande">
+                                <label for="entrada-descripcion">Descripción del asiento</label>
+                                <input id="entrada-descripcion" type="text" placeholder="Ej. Venta al contado">
+                            </div>
+                        </div>
+                        <div class="grupo linea-movimiento">
+                            <label>Línea de movimiento</label>
+                            <div class="fila-movimiento">
+                                <select id="mov-cuenta"><option value="">Elige una cuenta</option></select>
+                                <select id="mov-tipo">
+                                    <option value="Debe">Debe</option>
+                                    <option value="Haber">Haber</option>
+                                </select>
+                                <input id="mov-monto" type="number" min="0" step="0.01" placeholder="Monto">
+                                <button id="boton-agregar-linea" class="boton boton-primario">Agregar línea</button>
+                            </div>
+                        </div>
+                        <div class="movimientos-actuales">
+                            <h3>Líneas del asiento actual</h3>
+                            <div id="lista-lineas"></div>
+                        </div>
+                        <div class="grupo-botones">
+                            <button id="boton-registrar-asiento" class="boton boton-primario">Registrar asiento</button>
+                            <button id="boton-limpiar-asiento" class="boton boton-secundario">Limpiar asiento</button>
+                        </div>
+                        <div class="resumen-asiento">
+                            <div><strong>Total Debe:</strong> <span id="total-debe">$0.00</span></div>
+                            <div><strong>Total Haber:</strong> <span id="total-haber">$0.00</span></div>
+                            <div><strong>Diferencia:</strong> <span id="total-diferencia">$0.00</span></div>
+                        </div>
+                        <p id="mensaje-asiento" class="mensaje"></p>
+                    </div>
+                </section>
+
+                <section id="diario" class="seccion oculto">
+                    <div class="tarjeta-saas">
+                        <h2>Libro Diario</h2>
+                        <p>Historial cronológico completo de pólizas y transacciones financieras registradas.</p>
+                        <div id="lista-diario"></div>
+                        <p id="mensaje-diario" class="mensaje"></p>
+                    </div>
+                </section>
+
+                <section id="mayor" class="seccion oculto">
+                    <div class="tarjeta-saas">
+                        <h2>Libro Mayor</h2>
+                        <p>Saldos acumulados y cuentas resumidas analíticamente según su impacto financiero.</p>
+                        <div class="tabla-datos mayor-tabla">
+                            <div class="fila encabezado"><span>Cuenta</span><span>Debe</span><span>Haber</span><span>Saldo</span><span>Tipo</span></div>
+                            <div id="lista-mayor"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="resultados" class="seccion oculto">
+                    <div class="tarjeta-saas">
+                        <h2>Resultados y Métricas</h2>
+                        <p>Estado del balance general integrado y visualizaciones dinámicas del capital.</p>
+                        <div class="resultado-final">
+                            <div><strong>Cuentas creadas:</strong> <span id="resultado-cuentas">0</span></div>
+                            <div><strong>Asientos registrados:</strong> <span id="resultado-asientos">0</span></div>
+                            <div><strong>Total Debe:</strong> <span id="resultado-debe">$0.00</span></div>
+                            <div><strong>Total Haber:</strong> <span id="resultado-haber">$0.00</span></div>
+                            <div><strong>Estado del diario:</strong> <span id="resultado-estado">Sin datos</span></div>
+                        </div>
+                        <div class="grafico-contenedor">
+                            <h3>Gráfico de distribución de saldos</h3>
+                            <canvas id="grafico-mayor" width="760" height="300"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="script/propuesta4.js"></script>
+</body>
+</html>

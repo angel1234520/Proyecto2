@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Contable - Crear Cuenta</title>
+    <link rel="stylesheet" href="../estilos/propuesta4.css">
+    <style>
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            min-height: 100vh;
+        }
+        .side-form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background: white;
+        }
+        .side-visual {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            display: none;
+            color: white;
+            padding: 60px;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .form-contenedor {
+            width: 100%;
+            max-width: 440px;
+        }
+        @media (min-width: 768px) {
+            .split-layout { grid-template-columns: 1fr 1fr; }
+            .side-visual { display: flex; }
+        }
+    </style>
+</head>
+<body>
+    <div class="split-layout">
+        <div class="side-form">
+            <div class="form-contenedor">
+                <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 8px;">Crea tu cuenta gratis</h2>
+                <p style="margin-bottom: 24px;">No se requiere tarjeta de crédito para iniciar.</p>
+                
+                <div class="form-rejilla" style="grid-template-columns: repeat(2, 1fr); margin-bottom: 0; gap: 12px;">
+                    <div class="grupo">
+                        <label>Nombre</label>
+                        <input type="text" placeholder="Ej. Juan">
+                    </div>
+                    <div class="grupo">
+                        <label>Apellido</label>
+                        <input type="text" placeholder="Ej. Pérez">
+                    </div>
+                </div>
+                <div class="grupo" style="margin-bottom: 12px;">
+                    <label>Nombre de la Empresa</label>
+                    <input type="text" placeholder="Ej. La Criolla S.A.">
+                </div>
+                <div class="grupo" style="margin-bottom: 12px;">
+                    <label>Correo Electrónico</label>
+                    <input type="email" placeholder="juan@empresa.com">
+                </div>
+                <div class="grupo" style="margin-bottom: 20px;">
+                    <label>Contraseña</label>
+                    <input type="password" placeholder="Mínimo 8 caracteres">
+                </div>
+                
+                <a href="../index.html" class="boton boton-primario" style="display: block; text-align: center; text-decoration: none; margin-bottom: 16px;">Completar Registro</a>
+                <p style="font-size: 14px; text-align: center;">¿Ya tienes cuenta? <a href="login.html" style="color: #3b82f6; text-decoration: none; font-weight: 600;">Inicia sesión</a></p>
+            </div>
+        </div>
+        <div class="side-visual">
+            <h1 style="font-size: 42px; font-weight: 800; color: #3b82f6; margin-bottom: 16px;">Control Total</h1>
+            <p style="font-size: 18px; color: #94a3b8; line-height: 1.6;">Únete a más de 10,000 profesionales que gestionan sus catálogos, calculan saldos del libro mayor y controlan desbalances automáticamente en la nube.</p>
+        </div>
+    </div>
+</body>
+</html>

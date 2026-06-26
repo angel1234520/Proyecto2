@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Contable - Ajustes</title>
+    <link rel="stylesheet" href="../estilos/propuesta4.css">
+</head>
+<body style="background: #f8fafc; padding: 32px;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-size: 26px; font-weight: 800; margin-bottom: 6px;">Configuración Global</h2>
+        <p style="margin-bottom: 32px;">Gestiona las reglas de negocio y fiscales de tu entidad contable.</p>
+
+        <div class="tarjeta-saas">
+            <h3 style="border-bottom: 1px solid var(--color-borde); padding-bottom: 12px; margin-bottom: 24px;">Perfil Organizacional</h3>
+            
+            <div class="form-rejilla" style="grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="grupo">
+                    <label>Nombre Legal de la Entidad</label>
+                    <input type="text" value="La Criolla S.A.">
+                </div>
+                <div class="grupo">
+                    <label>Identificación Fiscal (RUC / NIT)</label>
+                    <input type="text" value="987654321-0">
+                </div>
+                <div class="grupo">
+                    <label>Moneda Base del Sistema</label>
+                    <select>
+                        <option value="COP">Peso Colombiano (COP)</option>
+                        <option value="USD">Dólar Estadounidense (USD)</option>
+                        <option value="NIO">Córdoba Nicaragüense (NIO)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                    </select>
+                </div>
+                <div class="grupo">
+                    <label>Zona Horaria Financiera</label>
+                    <select>
+                        <option>Bogotá, Lima, Quito (GMT-5)</option>
+                        <option>Managua, San José (GMT-6)</option>
+                        <option>Madrid, París (GMT+1)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grupo" style="margin-bottom: 24px;">
+                <label>Dirección Comercial</label>
+                <input type="text" value="Avenida Central, Edificio Innovación, Piso 4">
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 12px;">
+                <button class="boton boton-secundario">Restaurar Valores</button>
+                <button class="boton boton-primario">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

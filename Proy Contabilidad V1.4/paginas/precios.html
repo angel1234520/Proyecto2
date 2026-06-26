@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Contable - Planes y Precios</title>
+    <link rel="stylesheet" href="../estilos/propuesta4.css">
+    <style>
+        .contenedor-precios {
+            max-width: 1080px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .tarjeta-precio {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .tarjeta-precio.popular {
+            border-color: #3b82f6;
+            position: relative;
+        }
+        .tarjeta-precio.popular::before {
+            content: "MÁS POPULAR";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #3b82f6;
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 999px;
+        }
+        .monto-precio {
+            font-size: 36px;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 20px 0;
+        }
+        .lista-caracteristicas {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 30px;
+            text-align: left;
+        }
+        .lista-caracteristicas li {
+            padding: 8px 0;
+            color: var(--color-secundario-texto);
+            font-size: 14px;
+        }
+        .lista-caracteristicas li::before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body style="background: #f8fafc;">
+    <div style="text-align: center; margin-top: 50px;">
+        <h1 style="font-size: 32px; font-weight: 800;">Planes diseñados para cada etapa</h1>
+        <p>Empieza gratis y escala a medida que tu organización crezca.</p>
+    </div>
+
+    <main class="contenedor-precios">
+        <!-- PLAN BÁSICO -->
+        <div class="tarjeta-saas tarjeta-precio">
+            <div>
+                <h3>Plan Inicial</h3>
+                <p>Ideal para estudiantes y proyectos independientes.</p>
+                <div class="monto-precio">$0<span style="font-size: 16px; font-weight: 400; color: #64748b;">/mes</span></div>
+                <ul class="lista-caracteristicas">
+                    <li>Hasta 15 cuentas contables</li>
+                    <li>Libro Diario y Mayor básico</li>
+                    <li>1 Empresa activa</li>
+                    <li>Soporte comunitario</li>
+                </ul>
+            </div>
+            <a href="registro.html" class="boton boton-secundario" style="text-align: center; text-decoration: none;">Comenzar Gratis</a>
+        </div>
+
+        <!-- PLAN PROFESIONAL -->
+        <div class="tarjeta-saas tarjeta-precio popular">
+            <div>
+                <h3>Plan Profesional</h3>
+                <p>Perfecto para pymes y contadores profesionales.</p>
+                <div class="monto-precio">$19<span style="font-size: 16px; font-weight: 400; color: #64748b;">/mes</span></div>
+                <ul class="lista-caracteristicas">
+                    <li>Cuentas contables ilimitadas</li>
+                    <li>Reportería avanzada y exportable</li>
+                    <li>Hasta 5 empresas activas</li>
+                    <li>Gráficos financieros en tiempo real</li>
+                    <li>Soporte técnico prioritario</li>
+                </ul>
+            </div>
+            <a href="registro.html" class="boton boton-primario" style="text-align: center; text-decoration: none;">Iniciar Prueba Gratis</a>
+        </div>
+
+        <!-- PLAN ENTERPRISE -->
+        <div class="tarjeta-saas tarjeta-precio">
+            <div>
+                <h3>Plan Corporativo</h3>
+                <p>Para firmas de contabilidad y grandes corporaciones.</p>
+                <div class="monto-precio">$49<span style="font-size: 16px; font-weight: 400; color: #64748b;">/mes</span></div>
+                <ul class="lista-caracteristicas">
+                    <li>Todo lo del plan Profesional</li>
+                    <li>Empresas e informes ilimitados</li>
+                    <li>Consola de administración multiusuario</li>
+                    <li>Integración via API dedicada</li>
+                    <li>Asesor contable asignado</li>
+                </ul>
+            </div>
+            <a href="mailto:soporte@tu-saas.com" class="boton boton-secundario" style="text-align: center; text-decoration: none;">Contactar Ventas</a>
+        </div>
+    </main>
+</body>
+</html>
